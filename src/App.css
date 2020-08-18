@@ -5,6 +5,7 @@
   padding:0;
   box-sizing: border-box;
   font-family: 'Poor Story', cursive;
+  
 }
 
 body{
@@ -26,16 +27,26 @@ body{
   margin:3rem auto;
 }
 
+.container form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .container form input{
   display: block;
-  padding:0.5rem 1rem;
+  padding:0.6rem 1rem;
   margin-bottom:1rem;
   font-size:1.3rem;
-  width:300px;
+  width:100%;
    outline:none;
   border:none;
   background: #fff;
-
+  transition:0.4s all;
+}
+.container form input:focus, .container form textarea:focus{
+  border-bottom:3px solid #FFD23F;
+  transition:0.4s all;
 }
 
 .container form textarea{
@@ -57,10 +68,10 @@ body{
   border:none;
   font-size:1.2rem;
   cursor: pointer;
+  width:100%;
 }
 .container form #btn-submit:hover{
-  background:forestgreen;
-  
+  background:#009966;
 }
 
 .border{
@@ -68,4 +79,43 @@ body{
   background-color:#fff;
   height:2px;
   margin-top:3rem;
+}
+
+.post{
+  display: flex;
+  flex-direction: column;
+  background:#fff;
+  padding:1rem;
+  margin-top:1rem;
+  border-left:4px solid #FFD23F;
+}
+
+.post .post-title-data{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:1rem;
+}
+
+.post .post-content{
+  margin-bottom:1rem;
+}
+
+.post .post-actions{
+  display: flex;
+  justify-content: space-between;
+}
+
+.post .post-actions button{
+  background:#FFD23F;
+  border:none;
+  outline:none;
+  padding:0.3rem 0.5rem;
+  cursor:pointer;
+}
+.post .post-actions .btn-upvote button{
+  background:#540D6E;
+  color:#fff;
+}
+.post .post-actions .btn-delete{
+  margin-left:0.8rem;
 }

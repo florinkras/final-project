@@ -1,4 +1,5 @@
 import React from 'react';
+import Posts from './Posts'
 
 function Main() {
     return (
@@ -9,6 +10,13 @@ function Main() {
                 <button id="btn-submit">POST</button>
             </form>
             <div className="border"></div>
+            <div className="posts-container">
+                <Posts />
+                <Posts />
+                <Posts />
+
+            </div>
+
         </div>
     );
 }
