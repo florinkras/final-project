@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color:#540D6E;
+  font-family: 'Poor Story', cursive;
+}
+
+.header{
+  text-align:center;
+  background-color:#FFD23F;
+  padding:0.5rem 0;
+  box-shadow: 0 4px 2px -2px #333;
+}
+.header h1{
+  font-weight: 100;
+}
