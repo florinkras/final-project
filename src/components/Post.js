@@ -1,14 +1,14 @@
 import React from 'react';
 
-function Posts() {
+function Post(props) {
     return (
         <div className="post">
             <div className="post-title-data">
-                <h2>Title</h2>
+                <h2>{props.title}</h2>
                 <p>04/07/2020</p>
             </div>
             <div className="post-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                <p>{props.text}</p>
             </div>
             <div className="post-actions">
                 <div className="btn-upvote"><button>UpVote</button></div>
@@ -21,4 +21,4 @@ function Posts() {
     );
 }
 
-export default Posts;
+export default Post;
