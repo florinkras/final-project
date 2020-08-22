@@ -12,6 +12,23 @@ body{
   background-color:#540D6E;
 }
 
+/*scroll bar */
+::-webkit-scrollbar {
+  width: 5px;
+  }
+  
+  
+  ::-webkit-scrollbar-thumb {
+  background:#FFD23F; 
+
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+  background:rgb(54, 56, 58); 
+  }
+  
+  
+
 .header{
   text-align:center;
   background-color:#FFD23F;
@@ -25,6 +42,7 @@ body{
 .container{
   width:80%;
   margin:3rem auto;
+  min-height:79vh;
 }
 
 .container form{
@@ -143,3 +161,4 @@ body{
   padding:2rem;
   font-size:2.4rem;
 }
+

@@ -3,6 +3,7 @@ import Post from './Post';
 
 // react-id-generator
 import nextId from "react-id-generator";
+import { waitForElementToBeRemoved } from '@testing-library/react';
 
 function Main() {
 
@@ -99,10 +100,11 @@ function Main() {
         const editTitle = prompt("Edit Title");
         const editText = prompt("Edit Text");
 
+
         setPosts(prevState => prevState.map((element) => {
             if (element.id === id) {
-                element.title = editTitle;
-                element.text = editText;
+                element.title = editTitle ? editTitle : element.title
+                element.text = editText ? editText : element.text
                 element.date = date.toLocaleString();
             }
             return element
