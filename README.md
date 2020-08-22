@@ -22,3 +22,6 @@
   -If you want to upvote or downvote just click the button "UpVote".
   -If you want to edit the post click button "Edit" and write a new title or text.
   -If you want to delete post click buttoon "Delete".
+  
+### Site deployed in Netlify
+https://florinkras-project.netlify.app/
