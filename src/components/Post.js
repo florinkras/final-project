@@ -21,7 +21,7 @@ function Post(props) {
                     }
                 </div>
                 <div className="div">
-                    <button className="btn-edit">Edit</button>
+                    <button className="btn-edit" onClick={() => props.editPost(props.id)}>Edit</button>
                     <button className="btn-delete" onClick={() => props.handleRemove(props.id)}>Delete</button>
 
                 </div>

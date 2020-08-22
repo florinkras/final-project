@@ -94,6 +94,22 @@ function Main() {
         )
     }
 
+    // Edit Post
+    const editPost = (id) => {
+        const editTitle = prompt("Edit Title");
+        const editText = prompt("Edit Text");
+
+        setPosts(prevState => prevState.map((element) => {
+            if (element.id === id) {
+                element.title = editTitle;
+                element.text = editText;
+                element.date = date.toLocaleString();
+            }
+            return element
+        })
+        )
+    }
+
     // set items to localStorage
     localStorage.setItem("posts", JSON.stringify(posts));
 
@@ -123,6 +139,7 @@ function Main() {
                                     handleRemove={handleRemove}
                                     upVotePost={upVotePost}
                                     downVotePost={downVotePost}
+                                    editPost={editPost}
                                 />
                             ))
                         )
