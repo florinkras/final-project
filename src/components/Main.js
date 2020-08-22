@@ -3,7 +3,7 @@ import Post from './Post';
 
 // react-id-generator
 import nextId from "react-id-generator";
-import { waitForElementToBeRemoved } from '@testing-library/react';
+
 
 function Main() {
 
