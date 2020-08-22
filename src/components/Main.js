@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Post from './Post'
 
 function Main() {
-    const [posts, setPosts] = useState([]);
+
+    // localStorage
+    const localStorageItem = JSON.parse(localStorage.getItem('posts'));
+
+    // Set items to localStorage or set an empty array
+    const [posts, setPosts] = useState(
+        (localStorageItem) ? (localStorageItem) : []
+    );
 
     const [newPost, setNewPost] = useState({
         id: null,
@@ -12,10 +19,11 @@ function Main() {
         date: ""
     })
 
-
-
+    // Get new date for posts
     let date = new Date();
 
+
+    // set title of post
     const updateTitle = (e) => {
         setNewPost({
             ...newPost,
@@ -24,6 +32,8 @@ function Main() {
             date: date.toDateString()
         })
     }
+
+    // set text of post
     const updateText = (e) => {
         setNewPost({
             ...newPost,
@@ -33,6 +43,7 @@ function Main() {
         })
     }
 
+    // Post it
     const post = (e) => {
         e.preventDefault();
         if (newPost.title && newPost.text) {
@@ -48,11 +59,14 @@ function Main() {
         })
     }
 
+    // Delete post
     const handleRemove = (id) => {
         const newerList = posts.filter((e) => e.id !== id)
         setPosts(newerList);
     }
 
+
+    // upvote
     const upVotePost = (id) => {
         setPosts(prevState => prevState.map((element) => {
             if (element.id === id) {
@@ -63,6 +77,7 @@ function Main() {
         )
     }
 
+    // downvote
     const downVotePost = (id) => {
         setPosts(prevState => prevState.map((element) => {
             if (element.id === id) {
@@ -72,6 +87,9 @@ function Main() {
         })
         )
     }
+
+    // set items to localStorage
+    localStorage.setItem("posts", JSON.stringify(posts));
 
     return (
         <div className="container">
@@ -99,9 +117,6 @@ function Main() {
                                     handleRemove={handleRemove}
                                     upVotePost={upVotePost}
                                     downVotePost={downVotePost}
-
-
-
                                 />
                             ))
                         )
