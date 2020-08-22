@@ -89,6 +89,7 @@ body{
   margin-top:2rem;
   border-left:4px solid #FFD23F;
   box-shadow: 0 4px 2px -2px #333;
+
 }
 
 .post .post-title-data{
@@ -100,6 +101,7 @@ body{
 .post .post-content{
   margin-bottom:1rem;
   word-wrap: break-word;
+  font-weight:100;
 }
 
 .post .post-actions{
@@ -111,7 +113,7 @@ body{
   background:#FFD23F;
   border:none;
   outline:none;
-  padding:0.3rem 0.5rem;
+  padding:0.3rem 1rem;
   cursor:pointer;
 }
 .post .post-actions .btn-upvote button{
@@ -120,6 +122,17 @@ body{
 }
 .post .post-actions .btn-delete{
   margin-left:0.8rem;
+  background-color:#FFD23F;
+  transition:0.3s all;
+}
+.post .post-actions .btn-delete:hover{
+  background-color:#d21404;
+  color:#fff;
+}
+.post .post-actions .btn-edit:hover{
+  background:#540D6E;
+  color:#fff;
+  transition:0.3s all;
 }
 
 .no-posts-div{

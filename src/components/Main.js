@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Post from './Post'
 
 function Main() {
@@ -8,21 +8,28 @@ function Main() {
         id: null,
         title: '',
         text: '',
-        upvoted: false
+        upvote: false,
+        date: ""
     })
+
+
+
+    let date = new Date();
 
     const updateTitle = (e) => {
         setNewPost({
             ...newPost,
             id: posts.length,
-            title: e.target.value
+            title: e.target.value,
+            date: date.toDateString()
         })
     }
     const updateText = (e) => {
         setNewPost({
             ...newPost,
             id: posts.length,
-            text: e.target.value
+            text: e.target.value,
+            date: date.toLocaleString()
         })
     }
 
@@ -37,8 +44,33 @@ function Main() {
             id: null,
             title: '',
             text: '',
-            upvoted: false
+            upvote: false
         })
+    }
+
+    const handleRemove = (id) => {
+        const newerList = posts.filter((e) => e.id !== id)
+        setPosts(newerList);
+    }
+
+    const upVotePost = (id) => {
+        setPosts(prevState => prevState.map((element) => {
+            if (element.id === id) {
+                element.upvote = true
+            }
+            return element
+        })
+        )
+    }
+
+    const downVotePost = (id) => {
+        setPosts(prevState => prevState.map((element) => {
+            if (element.id === id) {
+                element.upvote = false
+            }
+            return element
+        })
+        )
     }
 
     return (
@@ -62,7 +94,14 @@ function Main() {
                                     id={e.id}
                                     title={e.title}
                                     text={e.text}
-                                    upvoted={e.upvoted}
+                                    date={e.date}
+                                    upvote={e.upvote}
+                                    handleRemove={handleRemove}
+                                    upVotePost={upVotePost}
+                                    downVotePost={downVotePost}
+
+
+
                                 />
                             ))
                         )
