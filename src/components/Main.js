@@ -1,7 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Post from './Post'
+import React, { useState } from 'react';
+import Post from './Post';
+
+// react-id-generator
+import nextId from "react-id-generator";
 
 function Main() {
+
+    //define a random id
+    const htmlId = nextId();
 
     // localStorage
     const localStorageItem = JSON.parse(localStorage.getItem('posts'));
@@ -23,11 +29,11 @@ function Main() {
     let date = new Date();
 
 
-    // set title of post
+    // set title,date,id of post
     const updateTitle = (e) => {
         setNewPost({
             ...newPost,
-            id: posts.length,
+            id: htmlId,
             title: e.target.value,
             date: date.toDateString()
         })
@@ -37,7 +43,7 @@ function Main() {
     const updateText = (e) => {
         setNewPost({
             ...newPost,
-            id: posts.length,
+            id: htmlId,
             text: e.target.value,
             date: date.toLocaleString()
         })
