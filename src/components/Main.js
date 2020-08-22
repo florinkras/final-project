@@ -119,7 +119,7 @@ function Main() {
         <div className="container">
             <form onSubmit={post}>
                 <input type="text" placeholder="title..." value={newPost.title} onChange={updateTitle} />
-                <textarea name="post-content" id="post-content" placeholder="content..." value={newPost.text} onChange={updateText}></textarea>
+                <textarea name="post-content" id="post-content" placeholder="text..." value={newPost.text} onChange={updateText}></textarea>
                 <button id="btn-submit">POST</button>
             </form>
             <div className="border"></div>
